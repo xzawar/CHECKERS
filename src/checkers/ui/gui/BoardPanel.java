@@ -9,6 +9,7 @@ import java.util.List;
 
 public class BoardPanel extends JPanel {
     private CheckersGame game;
+    private GamePanel gamePanel;
     private static final int CELL_SIZE = 80;
     private static final int BOARD_SIZE = 6;
     
@@ -27,8 +28,9 @@ public class BoardPanel extends JPanel {
     private int selectedCol = -1;
     private List<Move> validMoves = null;
     
-    public BoardPanel(CheckersGame game) {
+    public BoardPanel(CheckersGame game, GamePanel gamePanel) {
         this.game = game;
+        this.gamePanel = gamePanel;
         setPreferredSize(new Dimension(CELL_SIZE * BOARD_SIZE, CELL_SIZE * BOARD_SIZE));
         setBackground(Color.WHITE);
         
@@ -79,7 +81,7 @@ public class BoardPanel extends JPanel {
                 selectedCol = -1;
                 validMoves = null;
                 repaint();
-                ((GamePanel) getParent().getParent()).updateDisplay();
+                gamePanel.updateDisplay();
             } else if (clickedPiece != null && 
                        clickedPiece.getColor() == game.getEngine().getCurrentTurn()) {
                 // Select a different piece

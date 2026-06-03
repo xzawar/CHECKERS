@@ -28,7 +28,7 @@ public class GamePanel extends JPanel {
         setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         
         // Create board panel
-        boardPanel = new BoardPanel(game);
+        boardPanel = new BoardPanel(game, this);
         add(boardPanel, BorderLayout.CENTER);
         
         // Create info panel

@@ -30,6 +30,19 @@ public class Board {
         return r >= 0 && r < SIZE && c >= 0 && c < SIZE;
     }
 
+    public int countPieces(Piece.Color color) {
+        int count = 0;
+        for (int r = 0; r < SIZE; r++) {
+            for (int c = 0; c < SIZE; c++) {
+                Piece p = grid[r][c];
+                if (p != null && p.getColor() == color) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
     public void applyMove(Move m) {
         Piece p = grid[m.fromRow][m.fromCol];
         grid[m.toRow][m.toCol]     = p;

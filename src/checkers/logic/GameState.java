@@ -10,8 +10,14 @@ public class GameState {
     private Status status = Status.ONGOING;
 
     public void evaluate(Board board, Piece.Color currentTurn, MoveValidator mv) {
+        // Check if current player has no pieces left
+        if (board.countPieces(currentTurn) == 0) {
+            status = (currentTurn == Piece.Color.RED) ? Status.BLACK_WINS : Status.RED_WINS;
+            return;
+        }
+        
+        // Check if current player has no valid moves
         if (mv.getValidMoves(board, currentTurn).isEmpty()) {
-            // Current player has no moves → they lose
             status = (currentTurn == Piece.Color.RED) ? Status.BLACK_WINS : Status.RED_WINS;
         }
     }
