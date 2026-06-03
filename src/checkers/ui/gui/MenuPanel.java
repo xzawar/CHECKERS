@@ -90,6 +90,25 @@ public class MenuPanel extends JPanel {
         player2Field.setBounds(150, 410, 300, 45);
         add(player2Field);
         
+        // Add Enter key listeners
+        player1Field.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    player2Field.requestFocus();
+                }
+            }
+        });
+        
+        player2Field.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    startGame();
+                }
+            }
+        });
+        
         // Start button
         JButton startButton = createStyledButton("START GAME");
         startButton.setBounds(200, 510, 200, 50);

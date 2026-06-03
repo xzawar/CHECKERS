@@ -45,7 +45,6 @@ public class Main {
             }
             SwingUtilities.invokeLater(() -> new CheckersGUI());
         }
-
         scanner.close();
     }
 }

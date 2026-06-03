@@ -144,7 +144,7 @@ New folder/
 
 ## Credits
 
-Created by: Ahmad Zawar
+Created by: Ahmad Zawar , Ahmad Iqbal
 Game: 6x6 Checkers
 UI: Beautiful Minimalistic Design
-Year: 2025
+Year: 2026

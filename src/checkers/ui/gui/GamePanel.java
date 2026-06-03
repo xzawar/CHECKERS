@@ -25,7 +25,7 @@ public class GamePanel extends JPanel {
         setLayout(new BorderLayout(20, 20));
         
         // Add padding around the edges
-        setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        setBorder(BorderFactory.createEmptyBorder(70, 20, 20, 20));
         
         // Create board panel
         boardPanel = new BoardPanel(game, this);
