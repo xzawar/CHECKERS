@@ -1,0 +1,8 @@
+-Timmer
+-per turn timmer
+-add the color piece of the person whose turn is in the info panel
+-add the account system the user will have the option to login or play as guest (the user who has there account will have the option to add the name of the second person  )
+-create a file will all the stats which player has played the game there timmer and per turn time and there stats
+-update the GUI if any improvements can be done
+-Add the functionality of 2 screens and 2 persons will play on the same screen on the same device
+-Add the functionality to play online basically same as the upper one but online 
