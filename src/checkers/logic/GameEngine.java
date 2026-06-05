@@ -11,6 +11,13 @@ public class GameEngine {
     private MoveValidator validator;
     private GameState    state;
 
+    // Move bookkeeping
+    private int moveCount = 0;          // total moves (plies) played
+    private int movesSinceCapture = 0;  // for the no-progress draw rule
+
+    // If neither side captures for this many plies, the game is a draw.
+    private static final int NO_PROGRESS_LIMIT = 40;
+
     public GameEngine() {
         board        = new Board();
         currentTurn  = Piece.Color.RED;   // RED always goes first
@@ -22,9 +29,12 @@ public class GameEngine {
     public Piece.Color getCurrentTurn() { return currentTurn; }
     public GameState   getState()       { return state; }
     public List<Move>  getValidMoves()  { return validator.getValidMoves(board, currentTurn); }
+    public int         getMoveCount()   { return moveCount; }
 
     // Try to apply a move. Returns true if legal, false if illegal.
     public boolean applyMove(Move m) {
+        if (state.isOver()) return false;
+
         List<Move> valid = getValidMoves();
 
         // Check if the move exists in the legal list
@@ -35,13 +45,29 @@ public class GameEngine {
         if (!legal) return false;
 
         board.applyMove(m);
+        moveCount++;
+        if (m.isJump) {
+            movesSinceCapture = 0;
+        } else {
+            movesSinceCapture++;
+        }
 
         // After move, check next player's situation with switched turn
         Piece.Color nextTurn = (currentTurn == Piece.Color.RED)
                              ? Piece.Color.BLACK : Piece.Color.RED;
         state.evaluate(board, nextTurn, validator);
 
+        // No-progress draw rule
+        if (!state.isOver() && movesSinceCapture >= NO_PROGRESS_LIMIT) {
+            state.setDraw();
+        }
+
         if (!state.isOver()) currentTurn = nextTurn;
         return true;
+    }
+
+    /** Declare a mutually agreed draw (used by the Offer Draw button). */
+    public void declareDraw() {
+        state.setDraw();
     }
 }
