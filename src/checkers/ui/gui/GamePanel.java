@@ -43,6 +43,14 @@ public class GamePanel extends JPanel {
     
     public void updateDisplay() {
         boardPanel.repaint();
+        infoPanel.resetTurnTimer();
         infoPanel.updateInfo();
+    }
+
+    public void onTurnTimeout() {
+        // Time ran out — skip turn, reset countdown, refresh UI
+        infoPanel.resetTurnTimer();
+        infoPanel.updateInfo();
+        boardPanel.repaint();
     }
 }

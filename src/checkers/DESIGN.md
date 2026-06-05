@@ -40,23 +40,23 @@
 │  ┌────────────────────┐  ┌──────────────────┐                │
 │  │ BOARD (6x6)        │  │  GAME INFO       │                │
 │  │                    │  │ ──────────────── │                │
-│  │  ░▓░▓░▓           │  │  Player 1        │                 │
-│  │  ▓░▓░▓░           │  │  • Red Pieces    │                │
-│  │  ░▓░▓░▓           │  │                  │                 │
-│  │  ▓░▓░▓░           │  │  Player 2        │                │
-│  │  ░▓░▓░▓           │  │  • Black Pieces  │                │
-│  │  ▓◉▓◉▓◉           │  │ ──────────────── │                │
+│  │  ░▓░▓░▓            │  │  Player 1        │                │
+│  │  ▓░▓░▓░            │  │  • Red Pieces    │                │
+│  │  ░▓░▓░▓            │  │                  │                │
+│  │  ▓░▓░▓░            │  │  Player 2        │                │
+│  │  ░▓░▓░▓            │  │  • Black Pieces  │                │
+│  │  ▓◉▓◉▓◉          │   │ ─────────────── │                │ 
 │  │                    │  │  Current Turn:   │                │
 │  │  Legend:           │  │  Player 1        │                │
-│  │  ░ = light square  │  │                  │                │
-│  │  ▓ = dark square   │  │                  │                │
-│  │  ◉ = red piece     │  │  How to Play:    │                │
-│  │  ◐ = black piece   │  │  1. Click piece  │                │
-│  │  ♔ = king          │  │  2. Click square │                │
+│  │  ░ = light square  │  │◉(change piece   │                 │
+│  │  ▓ = dark square   │  │according to turn)│                │
+│  │  ◉ = red piece     │  │  How to Play:   │                 │
+│  │  ◐ = black piece   │  │   1. Click piece│                 │
+│  │  ♔ = king         │  │  2. Click square │                │
 │  │                    │  │  3. Jump enemies │                │
 │  │  Highlighted:      │  │  4. Reach end to │                │
 │  │  🟢 = selected     │  │     become King  │                │
-│  │  🔵 = valid move   │  │                  │                │
+│  │  🔵 = valid move   │  │                  │               │
 │  │                    │  │ ┌──────────────┐ │                │
 │  │                    │  │ │  NEW GAME    │ │                │
 │  │                    │  │ └──────────────┘ │                │
