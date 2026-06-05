@@ -5,9 +5,6 @@
 - Add a per-turn timer that resets after every move.
 - Display the current player's piece color in the Information Panel.
 - Show player names, piece counts, timers, and match status in the Information Panel.
-- Add a move history panel to track all moves made during a match.
-- Implement an undo move feature for offline games.
-- Add sound effects for piece movement, captures, and game outcomes.
 
 ### Account System
 - Allow users to either log in or play as a guest.
@@ -30,11 +27,6 @@
   - Winner
   - Match duration
 
-### GUI Improvements
-- Modernize the user interface with an improved layout and design.
-- Add animations and visual feedback for moves and captures.
-- Improve button styling and overall user experience.
-- Enhance responsiveness and information visibility.
 
 ### Local Multiplayer
 - Support two-player gameplay on the same device.
